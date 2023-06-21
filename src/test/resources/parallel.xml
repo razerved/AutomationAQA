@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main Suite" parallel="classes" thread-count="2">
+    <test name="Smoke">
+        <!--Если хочу только на тест то
+    <test name="Smoke" parallel="classes" thread-count="2" >
+     -->
+        <classes>
+            <class name="AUnitTest"/>
+        </classes>
+    </test>
+    <test name="Regression">
+        <classes>
+            <class name="PriorityTest"/>
+            <class name="BUnitTest">
+            </class>
+        </classes>
+    </test>
+</suite>

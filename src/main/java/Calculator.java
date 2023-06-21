@@ -1,4 +1,5 @@
 public class Calculator {
+    private String level;
     public String getLevel() {
         return level;
     }
@@ -7,7 +8,7 @@ public class Calculator {
         this.level = level;
     }
 
-    private String level;
+
     public int sum(int a, int b){
         return a + b;
     }

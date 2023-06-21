@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main Suite">
+    <test name="Smoke">
+        <groups>
+            <define name="Group 1">
+                <include name="smoke"/>
+            </define>
+            <define name="Group 2">
+                <include name="regress"/>
+            </define>
+            <run>
+                <include name="Group 1"/>
+                <!-- можно несколько
+                <include name="Group 1"/>
+                <include name="Group 2"/>
+                -->
+            </run>
+        </groups>
+        <classes>
+            <class name="GroupTest"/>
+            <!-- можно несколько
+               <class name="BUnitTest"/>
+               <class name="PriorityTest"/>
+             -->
+        </classes>
+    </test>
+</suite>

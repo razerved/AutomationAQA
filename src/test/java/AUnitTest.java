@@ -1,5 +1,5 @@
 import org.testng.annotations.*;
-
+//@Listeners(Listener.class) - если для отдельного класса
 public class AUnitTest extends BaseTest {
 
     @Test

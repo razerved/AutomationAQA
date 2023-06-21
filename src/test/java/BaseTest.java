@@ -1,14 +1,14 @@
 import org.testng.annotations.*;
-
+@Listeners(Listener.class)
 public class BaseTest {
 
-    protected Calculator calc;
+    protected Calculator calculate;
 
     @BeforeClass
     public void beforeClass() {
         System.out.println("This BeforeClass");
-        calc = new Calculator();
-        calc.setLevel(getClass().toString());
+        calculate = new Calculator();
+        calculate.setLevel(getClass().toString());
     }
 
     @BeforeGroups

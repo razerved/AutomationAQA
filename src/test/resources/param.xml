@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main Suite">
+    <test name="Smoke">
+        <parameter name="login-value" value="user1"/>
+        <parameter name="password-value" value="1234"/>
+        <classes>
+            <class name="ParamXMLTest"/>
+        </classes>
+    </test>
+</suite>
