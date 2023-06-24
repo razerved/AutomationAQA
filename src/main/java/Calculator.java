@@ -13,6 +13,16 @@ public class Calculator {
         return a + b;
     }
 
+    public int homeMines(int a, int b){
+        return  a - b;
+    }
 
+    public double homeDoubleDivisionByZero(double a, double b){
+        return  a / b;
+    }
+
+    public int homeIntDivisionByZero(int a, int b){
+        return  a / b;
+    }
 
 }
