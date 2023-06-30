@@ -80,6 +80,27 @@ public class SmokeTest {
 
     }
 
+    @Test
+    public void homeWorkTest() {
+        driver.get("https://kermi-fko.ru/raschety/Calc-Rehau-Solelec.aspx");
+
+        driver.findElement(By.id("el_f_width")).sendKeys("10");
+        driver.findElement(By.id("el_f_lenght")).sendKeys("20");
+
+        Select selectSex = new Select(driver.findElement(By.id("room_type")));
+        selectSex.selectByIndex(2);
+
+        Select selectSex2 = new Select(driver.findElement(By.id("heating_type")));
+        selectSex2.selectByIndex(2);
+
+        driver.findElement(By.xpath("//*[@name='button']")).click();
+
+        assertTrue(driver.findElement(By.id("floor_cable_power")).getAttribute("value").equals("14840"),
+                "Не верно высчитана Мощь");
+        assertTrue(driver.findElement(By.id("spec_floor_cable_power")).getAttribute("value").equals("74"),
+                "Не верно высчитана Удельная ");
+    }
+
 
     @AfterMethod
     public void tearDown() {
