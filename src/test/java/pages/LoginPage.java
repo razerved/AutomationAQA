@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 public class LoginPage extends BasePage {
 
     //Блок описания локаторов для элементов
-    private final By emailNameLocator = By.id("name");
+    private final By emailNameLocator = By.id("user-name");
     private final By pswInputLocator = By.id("password");
     private final By logIbButtonLocator = By.id("button_primary");
     private final By errorTextLocator = By.className("error-text");
