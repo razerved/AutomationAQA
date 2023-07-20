@@ -13,6 +13,9 @@ public class BaseTestHW {
     protected BaseStepsHW bs;
     protected BascetPageHW bp;
 
+    protected CheckoutPageHW co;
+    protected FinishPageHW fp;
+
     @BeforeMethod
     public void setUp(){
         BrowserFactory browserFactory = new BrowserFactory();
@@ -20,6 +23,9 @@ public class BaseTestHW {
         lp = new LoginPageHW(wd);
         bs = new BaseStepsHW(wd);
         bp = new BascetPageHW(wd);
+
+        co = new CheckoutPageHW(wd);
+        fp = new FinishPageHW(wd);
 
         wd.get(ReadProperties.getUrl());
     }
