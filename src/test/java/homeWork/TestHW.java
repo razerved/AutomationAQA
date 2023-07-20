@@ -17,8 +17,11 @@ public class TestHW extends BaseTestHW{
     @Test
     public void bySomeGoodsTest(){
         getBs().successLogin(ReadProperties.username(), ReadProperties.password())
-                .clickGoodsButtonAdd(1).clickCheckout();
-
+                .clickGoodsButtonAdd(1)
+                .clickCheckout()
+                .fillData("Obi", "Van", "deathStar")
+                .clickButtonFinishPage()
+                .clickBackHomeButton();
 
     }
 

@@ -25,10 +25,9 @@ public class BascetPageHW extends BasePageHW {
         return wd.findElement(buttonCheckoutLocator);
     }
 
-    public void clickCheckout(){
+    public CheckoutPageHW clickCheckout(){
         getButtonCheckoutLocator().click();
-
-
+        return new CheckoutPageHW(wd);
     }
 
 
