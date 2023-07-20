@@ -1,5 +1,8 @@
-package homeWork;
+package homeWork.steps;
 
+import homeWork.Page.BascetPageHW;
+import homeWork.Page.LoginPageHW;
+import homeWork.Page.ProductsPageHW;
 import org.openqa.selenium.WebDriver;
 
 public class BaseStepsHW {

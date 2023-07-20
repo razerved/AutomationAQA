@@ -1,12 +1,13 @@
-package homeWork;
+package homeWork.Page;
 
+import homeWork.base.BasePageHW;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class ProductsPageHW extends BasePageHW{
+public class ProductsPageHW extends BasePageHW {
     private final static String path = "https://www.saucedemo.com/inventory.html";
     private final By goodsLocator = By.cssSelector(".inventory_item");
     private final By buttonLocator = By.cssSelector(".btn.btn_primary");

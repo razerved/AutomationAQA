@@ -1,10 +1,11 @@
-package homeWork;
+package homeWork.tests;
 
+import homeWork.base.BaseTestHW;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.configuration.ReadProperties;
 
-public class TestHW extends BaseTestHW{
+public class TestHW extends BaseTestHW {
 
     @Test
     public void loginTest(){

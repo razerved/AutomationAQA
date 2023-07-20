@@ -1,6 +1,11 @@
-package homeWork;
+package homeWork.base;
 
 import factory.BrowserFactory;
+import homeWork.Page.CheckoutPageHW;
+import homeWork.Page.BascetPageHW;
+import homeWork.Page.FinishPageHW;
+import homeWork.Page.LoginPageHW;
+import homeWork.steps.BaseStepsHW;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
