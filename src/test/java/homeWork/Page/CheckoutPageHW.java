@@ -1,5 +1,7 @@
-package homeWork;
+package homeWork.Page;
 
+import homeWork.Page.BasePageHW;
+import homeWork.Page.FinishPageHW;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
