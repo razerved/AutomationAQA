@@ -23,7 +23,6 @@ public class TestHW extends BaseTestHW {
                 .fillData("Obi", "Van", "deathStar")
                 .clickButtonFinishPage()
                 .clickBackHomeButton();
-
     }
 
 
