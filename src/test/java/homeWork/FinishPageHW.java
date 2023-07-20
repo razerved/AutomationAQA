@@ -3,11 +3,6 @@ package homeWork;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
 
 public class FinishPageHW extends BasePageHW {
 
@@ -29,7 +24,7 @@ public class FinishPageHW extends BasePageHW {
         return wd.findElement(finishButtonLocator);
     }
 
-    public CompletePageHW clickButtonFinishPage(){
+    public CompletePageHW clickButtonFinishPage() {
         getFinishButtonLocator().click();
         return new CompletePageHW(wd);
     }
