@@ -21,6 +21,7 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+
     @Override
     protected By getPageIdentifier() {
         return logIbButtonLocator;
@@ -29,7 +30,7 @@ public class LoginPage extends BasePage {
     //Блок атомарных методов
 
     public WebElement getEmailInput() {
-        return driver.findElement(emailNameLocator);
+        return waitService.waitForExists(emailNameLocator);
     }
 
     public WebElement getPswInput() {
