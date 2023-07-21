@@ -19,7 +19,7 @@ public class BaseTest {
 
         loginStep = new LoginStep(driver);
 
-        driver.get(ReadProperties.getUrl());
+        //driver.get(ReadProperties.getUrl());
     }
 
     @AfterMethod
