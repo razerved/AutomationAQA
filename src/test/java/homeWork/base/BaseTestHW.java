@@ -2,7 +2,7 @@ package homeWork.base;
 
 import factory.BrowserFactory;
 import homeWork.Page.CheckoutPageHW;
-import homeWork.Page.BascetPageHW;
+import homeWork.Page.BasketPageHW;
 import homeWork.Page.FinishPageHW;
 import homeWork.Page.LoginPageHW;
 import homeWork.steps.BaseStepsHW;
@@ -14,23 +14,22 @@ import utils.configuration.ReadProperties;
 public class BaseTestHW {
     protected WebDriver wd;
 
-    protected LoginPageHW lp;
-    protected BaseStepsHW bs;
-    protected BascetPageHW bp;
-
-    protected CheckoutPageHW co;
-    protected FinishPageHW fp;
+    protected LoginPageHW loginPage;
+    protected BaseStepsHW baseStep;
+    protected BasketPageHW basketPage;
+    protected CheckoutPageHW checkoutPage;
+    protected FinishPageHW finishPage;
 
     @BeforeMethod
     public void setUp(){
         BrowserFactory browserFactory = new BrowserFactory();
         wd = browserFactory.getDriver();
-        lp = new LoginPageHW(wd);
-        bs = new BaseStepsHW(wd);
-        bp = new BascetPageHW(wd);
+        loginPage = new LoginPageHW(wd);
+        baseStep = new BaseStepsHW(wd);
+        basketPage = new BasketPageHW(wd);
 
-        co = new CheckoutPageHW(wd);
-        fp = new FinishPageHW(wd);
+        checkoutPage = new CheckoutPageHW(wd);
+        finishPage = new FinishPageHW(wd);
 
         wd.get(ReadProperties.getUrl());
     }
@@ -42,11 +41,11 @@ public class BaseTestHW {
 
 
 
-    public LoginPageHW getLp() {
-        return lp;
+    public LoginPageHW getLoginPage() {
+        return loginPage;
     }
-    public BaseStepsHW getBs(){
-        return bs;
+    public BaseStepsHW getBaseStep(){
+        return baseStep;
     }
 
 
