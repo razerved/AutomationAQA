@@ -1,7 +1,7 @@
 package homeWork.Page;
 
-import homeWork.Page.BasePageHW;
 import homeWork.Page.FinishPageHW;
+import homeWork.base.BasePageHW;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -51,13 +51,7 @@ public class CheckoutPageHW extends BasePageHW {
         getZipLocator().sendKeys(zipCode);
     }
 
-    public FinishPageHW fillData(String name, String lastName, String zipCode){
-        getNameLocator().sendKeys(name);
-        getLastNameLocator().sendKeys(lastName);
-        getZipLocator().sendKeys(zipCode);
-        getContinueButtonLocator().click();
-        return new FinishPageHW(wd);
-    }
+
 
 
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class ProductsPageHW extends BasePageHW {
-    private final static String path = "https://www.saucedemo.com/inventory.html";
+    private final static String path = "/inventory.html";
     private final By goodsLocator = By.cssSelector(".inventory_item");
     private final By buttonLocator = By.cssSelector(".btn.btn_primary");
     private final By titleLocator = By.cssSelector(".title");
@@ -35,17 +35,6 @@ public class ProductsPageHW extends BasePageHW {
     }
 
 
-    public void choseSomeGood(int goods, int button){
-        getGoodsLocator().get(goods).click();
-        getButtonLocator().get(button).click();
-    }
-
-
-    public BascetPageHW clickGoodsButtonAdd(int button){
-        getButtonLocator().get(button).click();
-        getBasketLocator().click();
-        return new BascetPageHW(wd);
-    }
 
 
 

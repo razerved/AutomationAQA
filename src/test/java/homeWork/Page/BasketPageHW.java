@@ -1,17 +1,18 @@
 package homeWork.Page;
 
+import homeWork.base.BasePageHW;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class BascetPageHW extends BasePageHW {
-    private final String path = "https://www.saucedemo.com/inventory.html";
+public class BasketPageHW extends BasePageHW {
+    private final String path = "/inventory.html";
 
     private final By buttonCheckoutLocator = By.id("checkout");
 
 
 
-    public BascetPageHW(WebDriver wd) {
+    public BasketPageHW(WebDriver wd) {
         super(wd);
     }
 
@@ -25,10 +26,7 @@ public class BascetPageHW extends BasePageHW {
         return wd.findElement(buttonCheckoutLocator);
     }
 
-    public CheckoutPageHW clickCheckout(){
-        getButtonCheckoutLocator().click();
-        return new CheckoutPageHW(wd);
-    }
+
 
 
 }

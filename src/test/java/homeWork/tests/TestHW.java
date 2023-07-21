@@ -5,27 +5,28 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.configuration.ReadProperties;
 
+import static org.testng.Assert.*;
+
 public class TestHW extends BaseTestHW {
 
     @Test
     public void loginTest(){
-        Assert.assertTrue(
-                getBs().successLogin(ReadProperties.username()
+        assertTrue(
+                loginStep.successLogin(ReadProperties.username()
                         ,ReadProperties.password()).isPageOpen()
         );
     }
 
     @Test
     public void bySomeGoodsTest(){
-        getBs().successLogin(ReadProperties.username(), ReadProperties.password())
-                .clickGoodsButtonAdd(1)
-                .clickCheckout()
-                .fillData("Obi", "Van", "deathStar")
-                .clickButtonFinishPage()
-                .clickBackHomeButton();
+        assertTrue(loginStep.successLogin(ReadProperties.username(),
+                ReadProperties.password()).isPageOpen());
+        assertTrue(productsSteps.clickGoodsButtonAdd(1).isPageOpen());
+        assertTrue(basketStep.clickCheckout().isPageOpen());
+        assertTrue(checkoutStep.fillData("Han", "Solo", "12345").isPageOpen());
+        assertTrue(finishSteps.clickButtonFinishPage().isPageOpen());
+        assertTrue(completeSteps.clickBackHomeButton().isPageOpen());
     }
-
-
 
 
 }
