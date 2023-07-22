@@ -11,6 +11,7 @@ import utils.configuration.ReadProperties;
 
 import java.sql.DriverManager;
 import java.time.Duration;
+import java.util.HashMap;
 
 public class BrowserFactory {
 
@@ -48,7 +49,12 @@ public class BrowserFactory {
     }
 
     public ChromeOptions getChromeOptions() {
+        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+        chromePrefs.put("profile.default_content_settings.popups", 0);
+        chromePrefs.put("download.default_directory", System.getProperty("user.dir"));
+
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setExperimentalOption("prefs", chromePrefs);
 
         chromeOptions.setHeadless(false);
         chromeOptions.addArguments("--disable-gpu");
@@ -71,6 +77,9 @@ public class BrowserFactory {
         firefoxOptions.addArguments("--incognito");
 
         return firefoxOptions;
+    }
+    public void downloadSettings(){
+
     }
 
 }
