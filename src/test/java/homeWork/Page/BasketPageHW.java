@@ -26,10 +26,7 @@ public class BasketPageHW extends BasePageHW {
         return wd.findElement(buttonCheckoutLocator);
     }
 
-    public CheckoutPageHW clickCheckout(){
-        getButtonCheckoutLocator().click();
-        return new CheckoutPageHW(wd);
-    }
+
 
 
 }

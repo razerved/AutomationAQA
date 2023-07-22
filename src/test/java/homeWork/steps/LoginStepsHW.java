@@ -1,23 +1,17 @@
 package homeWork.steps;
 
-import homeWork.Page.BasketPageHW;
 import homeWork.Page.LoginPageHW;
 import homeWork.Page.ProductsPageHW;
+import homeWork.base.BaseStepsHW;
 import org.openqa.selenium.WebDriver;
 
-public class BaseStepsHW {
-    protected WebDriver wd;
+public class LoginStepsHW extends BaseStepsHW {
 
-    protected LoginPageHW loginPage;
-    protected ProductsPageHW productPage;
-    protected BasketPageHW basketPage;
-    public BaseStepsHW(WebDriver wd) {
-        this.wd = wd;
 
-        loginPage = new LoginPageHW(wd);
-        productPage = new ProductsPageHW(wd);
-        basketPage = new BasketPageHW(wd);
+    public LoginStepsHW(WebDriver wd) {
+        super(wd);
     }
+
 
 
     public ProductsPageHW successLogin(String name, String password){
@@ -29,7 +23,6 @@ public class BaseStepsHW {
         loginPage.login(name,password);
         return loginPage;
     }
-
 
 
 }

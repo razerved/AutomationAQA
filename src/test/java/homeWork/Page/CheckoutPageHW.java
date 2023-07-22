@@ -51,13 +51,7 @@ public class CheckoutPageHW extends BasePageHW {
         getZipLocator().sendKeys(zipCode);
     }
 
-    public FinishPageHW fillData(String name, String lastName, String zipCode){
-        getNameLocator().sendKeys(name);
-        getLastNameLocator().sendKeys(lastName);
-        getZipLocator().sendKeys(zipCode);
-        getContinueButtonLocator().click();
-        return new FinishPageHW(wd);
-    }
+
 
 
 

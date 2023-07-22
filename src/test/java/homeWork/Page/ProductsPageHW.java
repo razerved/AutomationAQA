@@ -35,17 +35,7 @@ public class ProductsPageHW extends BasePageHW {
     }
 
 
-    public void choseSomeGood(int goods, int button){
-        getGoodsLocator().get(goods).click();
-        getButtonLocator().get(button).click();
-    }
 
-
-    public BasketPageHW clickGoodsButtonAdd(int button){
-        getButtonLocator().get(button).click();
-        getBasketLocator().click();
-        return new BasketPageHW(wd);
-    }
 
 
 

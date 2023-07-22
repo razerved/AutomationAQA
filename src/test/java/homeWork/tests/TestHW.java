@@ -10,20 +10,26 @@ public class TestHW extends BaseTestHW {
     @Test
     public void loginTest(){
         Assert.assertTrue(
-                getBaseStep().successLogin(ReadProperties.username()
+                loginStep.successLogin(ReadProperties.username()
                         ,ReadProperties.password()).isPageOpen()
         );
     }
 
     @Test
     public void bySomeGoodsTest(){
-        getBaseStep().successLogin(ReadProperties.username(), ReadProperties.password())
-                .clickGoodsButtonAdd(1)
-                .clickCheckout()
+        Assert.assertTrue(loginStep.successLogin(ReadProperties.username(),
+                ReadProperties.password()).isPageOpen());
+        productsStepsHW.clickGoodsButtonAdd(1).isPageOpen();
+        basketStep.clickCheckout().isPageOpen();
+                /*.clickCheckout()
                 .fillData("Obi", "Van", "deathStar")
                 .clickButtonFinishPage()
-                .clickBackHomeButton();
+                .clickBackHomeButton();*/
     }
 
+    @Test
+    public void tut(){
+
+    }
 
 }
