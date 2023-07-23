@@ -25,10 +25,7 @@ public class FinishPageHW extends BasePageHW {
         return wd.findElement(finishButtonLocator);
     }
 
-    public CompletePageHW clickButtonFinishPage() {
-        getFinishButtonLocator().click();
-        return new CompletePageHW(wd);
-    }
+
 
 
 }

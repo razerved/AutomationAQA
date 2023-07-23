@@ -5,11 +5,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.configuration.ReadProperties;
 
+import static org.testng.Assert.*;
+
 public class TestHW extends BaseTestHW {
 
     @Test
     public void loginTest(){
-        Assert.assertTrue(
+        assertTrue(
                 loginStep.successLogin(ReadProperties.username()
                         ,ReadProperties.password()).isPageOpen()
         );
@@ -17,19 +19,14 @@ public class TestHW extends BaseTestHW {
 
     @Test
     public void bySomeGoodsTest(){
-        Assert.assertTrue(loginStep.successLogin(ReadProperties.username(),
+        assertTrue(loginStep.successLogin(ReadProperties.username(),
                 ReadProperties.password()).isPageOpen());
-        productsStepsHW.clickGoodsButtonAdd(1).isPageOpen();
-        basketStep.clickCheckout().isPageOpen();
-                /*.clickCheckout()
-                .fillData("Obi", "Van", "deathStar")
-                .clickButtonFinishPage()
-                .clickBackHomeButton();*/
+        assertTrue(productsSteps.clickGoodsButtonAdd(1).isPageOpen());
+        assertTrue(basketStep.clickCheckout().isPageOpen());
+        assertTrue(checkoutStep.fillData("Han", "Solo", "12345").isPageOpen());
+        assertTrue(finishSteps.clickButtonFinishPage().isPageOpen());
+        assertTrue(completeSteps.clickBackHomeButton().isPageOpen());
     }
 
-    @Test
-    public void tut(){
-
-    }
 
 }

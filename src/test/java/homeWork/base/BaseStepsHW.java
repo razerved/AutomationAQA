@@ -11,6 +11,7 @@ public class BaseStepsHW {
     protected BasketPageHW basketPage;
     protected CheckoutPageHW checkoutPage;
     protected FinishPageHW finishPage;
+    protected CompletePageHW completePage;
     public BaseStepsHW(WebDriver wd) {
         this.wd = wd;
 
@@ -19,6 +20,7 @@ public class BaseStepsHW {
         basketPage = new BasketPageHW(wd);
         checkoutPage = new CheckoutPageHW(wd);
         finishPage = new FinishPageHW(wd);
+        completePage = new CompletePageHW(wd);
     }
 
 

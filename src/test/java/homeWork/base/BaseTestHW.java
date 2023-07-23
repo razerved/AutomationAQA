@@ -1,13 +1,7 @@
 package homeWork.base;
 
 import factory.BrowserFactory;
-import homeWork.Page.CheckoutPageHW;
-import homeWork.Page.FinishPageHW;
-import homeWork.Page.LoginPageHW;
-import homeWork.steps.BasketStepsHW;
-import homeWork.steps.CheckoutStepsHW;
-import homeWork.steps.LoginStepsHW;
-import homeWork.steps.ProductsStepsHW;
+import homeWork.steps.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,9 +11,11 @@ public class BaseTestHW {
     protected WebDriver wd;
 
     protected LoginStepsHW loginStep;
-    protected ProductsStepsHW productsStepsHW;
+    protected ProductsStepsHW productsSteps;
     protected BasketStepsHW basketStep;
     protected CheckoutStepsHW checkoutStep;
+    protected FinishStepsHW finishSteps;
+    protected CompleteStepsHW completeSteps;
     //protected FinishPageHW finishPage;
 
     @BeforeMethod
@@ -30,8 +26,9 @@ public class BaseTestHW {
         loginStep = new LoginStepsHW(wd);
         basketStep = new BasketStepsHW(wd);
         checkoutStep = new CheckoutStepsHW(wd);
-        productsStepsHW = new ProductsStepsHW(wd);
-
+        productsSteps = new ProductsStepsHW(wd);
+        finishSteps = new FinishStepsHW(wd);
+        completeSteps = new CompleteStepsHW(wd);
 
         wd.get(ReadProperties.getUrl());
     }
