@@ -32,7 +32,7 @@ public class AlertTests extends BaseTest {
 
         alert.dismiss();
 
-        Thread.sleep(3000);
+       //Thread.sleep(3000);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class AlertTests extends BaseTest {
         alert.sendKeys("Everything is OK!");
         alert.accept();
 
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
     }
 
 }
