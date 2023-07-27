@@ -24,7 +24,7 @@ public class ActionTest extends BaseTest{
         List<WebElement> targetElements = waitService.waitForAllVisibleElementsLocatedBy(By.className("figure"));
 
         actions
-                .moveToElement(targetElements.get(0))
+                .moveToElement(targetElements.get(0), 10, 10)
                 .click(waitService.waitForVisibilityLocatedBy(By.cssSelector("[href='/users/1']")))
                 .build()
                 .perform();
