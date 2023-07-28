@@ -26,8 +26,8 @@ public class TestHW extends BaseTestHW {
     @Issue("BUG-3321")
     public void test2(){
         assertTrue(
-                loginStep.negativeLogin(ReadProperties.username()
-                        ,"123123").isPageOpen()
+                loginStep.negativeLogin("парам"
+                        ,"123123").equals(false)
         );
     }
 
