@@ -1,5 +1,6 @@
-package baseEntities;
+package utils;
 
+import baseEntities.BaseTest;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import io.qameta.allure.Attachment;

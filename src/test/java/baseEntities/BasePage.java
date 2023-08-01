@@ -2,13 +2,14 @@ package baseEntities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.ProjectsPage;
 import services.WaitService;
-import steps.LoginStep;
 import utils.configuration.ReadProperties;
 
 public abstract class BasePage {
     protected WebDriver driver;
     protected WaitService waitService;
+    protected ProjectsPage projectsPage;
 
 
 
@@ -20,8 +21,6 @@ public abstract class BasePage {
 
     public void openPageByUrl(String pagePath) {
         driver.get(ReadProperties.getUrl() + pagePath);
-
-
     }
 
     protected abstract By getPageIdentifier();

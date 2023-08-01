@@ -1,6 +1,8 @@
 package pages;
 
 import baseEntities.BasePage;
+import elements.Button;
+import elements.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,16 +31,16 @@ public class LoginPage extends BasePage {
 
     //Блок атомарных методов
 
-    public WebElement getEmailInput() {
-        return waitService.waitForExists(emailNameLocator);
+    public UIElement getEmailInput() {
+        return new UIElement(driver, emailNameLocator);
     }
 
     public WebElement getPswInput() {
         return driver.findElement(pswInputLocator);
     }
 
-    public WebElement getLogIbButton() {
-        return driver.findElement(logIbButtonLocator);
+    public Button getLogIbButton() {
+        return new Button(driver, logIbButtonLocator);
     }
 
     public WebElement getErrorTextLocator() {
@@ -62,10 +64,6 @@ public class LoginPage extends BasePage {
         getPswInput().sendKeys(password);
         getLogIbButton().click();
     }
-
-
-
-
 
 
 }
