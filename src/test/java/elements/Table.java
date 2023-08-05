@@ -53,7 +53,6 @@ public class Table {
      * @param index
      * @return
      */
-
     public TableRow getRow(int index) {
         ArrayList<UIElement> list = (ArrayList<UIElement>) uiElement.findUIElements(By.xpath("//tr/td/.."));
         return new TableRow(driver, list.get(index));
