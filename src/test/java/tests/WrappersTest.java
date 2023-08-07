@@ -53,6 +53,7 @@ public class WrappersTest extends BaseTest {
         addProjectPage.openPageByUrl();
 
         RadioButton radioButton = addProjectPage.getTableProject();
+        //radioButton.getRadioButtonByNameProjectClick("Use a single repository with baseline support");
         radioButton.getRadioButtonByNameProjectClick("Use multiple test suites to manage cases");
         Thread.sleep(1300);
     }
@@ -65,7 +66,7 @@ public class WrappersTest extends BaseTest {
         addProjectPage.openPageByUrl();
 
         RadioButton radioButton = addProjectPage.getTableProject();
-        radioButton.getRadioButtonByIndexClick(2);
+        radioButton.getRadioButtonByIndexClick(1);
         Thread.sleep(1300);
     }
 
@@ -77,7 +78,7 @@ public class WrappersTest extends BaseTest {
         addProjectPage.openPageByUrl();
 
         RadioButton radioButton = addProjectPage.getTableProject();
-        radioButton.test(3);
+        radioButton.test("2");
         Thread.sleep(1300);
     }
 
