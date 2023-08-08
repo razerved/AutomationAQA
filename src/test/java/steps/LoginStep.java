@@ -12,14 +12,14 @@ public class LoginStep extends BaseStep {
         super(driver);
     }
 
-    public DashboardPage successLogin(String username, String password) {
-        loginPage.login(username, password);
+    public DashboardPage successLogin(String username, String psw) {
+        loginPage.login(username, psw);
 
         return dashboardPage;
-
     }
-    public LoginPage negativeLogin(String username, String password) {
-        loginPage.login(username, password);
+
+    public LoginPage negativeLogin(String username, String psw) {
+        loginPage.login(username, psw);
 
         return loginPage;
     }

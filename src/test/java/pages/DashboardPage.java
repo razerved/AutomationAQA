@@ -4,7 +4,7 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.configuration.ReadProperties;
+
 
 public class DashboardPage extends BasePage {
     private final static String pagePath = "/index.php?/dashboard/";
