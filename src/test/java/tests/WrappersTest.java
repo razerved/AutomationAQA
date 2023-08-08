@@ -1,6 +1,7 @@
 package tests;
 
 import baseEntities.BaseTest;
+import elements.CheckBox;
 import elements.RadioButton;
 import elements.TableCell;
 import homeWork.AddProjectPage;
@@ -46,41 +47,43 @@ public class WrappersTest extends BaseTest {
     }
 
     @Test(description = "Домашняя работа")
-    @Description("Тест RadioButtonByText")
-    public void test3() throws InterruptedException {
+    @Description("Тест selectByIndex,selectByValue,selectByText")
+    public void test4() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         AddProjectPage addProjectPage = new AddProjectPage(driver);
         addProjectPage.openPageByUrl();
 
-        RadioButton radioButton = addProjectPage.getTableProject();
-        //radioButton.getRadioButtonByNameProjectClick("Use a single repository with baseline support");
-        radioButton.getRadioButtonByNameProjectClick("Use multiple test suites to manage cases");
-        Thread.sleep(1300);
+        addProjectPage.getType().selectByIndex(1);
+        addProjectPage.getType().selectByValue("2");
+        addProjectPage.getType().selectByText("Use multiple test suites to manage cases");
     }
-
     @Test(description = "Домашняя работа")
-    @Description("Тест RadioButtonByIndex")
-    public void test4() throws InterruptedException {
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
-        AddProjectPage addProjectPage = new AddProjectPage(driver);
-        addProjectPage.openPageByUrl();
-
-        RadioButton radioButton = addProjectPage.getTableProject();
-        radioButton.getRadioButtonByIndexClick(1);
-        Thread.sleep(1300);
-    }
-
-    @Test(description = "Домашняя работа")
-    @Description("Тест RadioButtonByValue")
+    @Description("Тест clickCheckBox and removeCheckBox")
     public void test5() throws InterruptedException {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         AddProjectPage addProjectPage = new AddProjectPage(driver);
         addProjectPage.openPageByUrl();
 
-        RadioButton radioButton = addProjectPage.getTableProject();
-        radioButton.test("2");
-        Thread.sleep(1300);
+        addProjectPage.getCheckBoxLocator().selectClickCheckBox();
+        Thread.sleep(1400);
+        addProjectPage.getCheckBoxLocator().removeClickCheckBox();
+
     }
+
+    @Test(description = "Домашняя работа")
+    @Description("Тест DropDown")
+    public void test6() throws InterruptedException {
+        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        AddProjectPage addProjectPage = new AddProjectPage(driver);
+        addProjectPage.openPageByUrl2();
+
+
+        Thread.sleep(1400);
+
+
+    }
+
+
 
 
 
