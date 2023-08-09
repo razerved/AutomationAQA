@@ -7,12 +7,12 @@ import utils.configuration.ReadProperties;
 
 import java.time.Duration;
 
-public abstract class BasePage {
+public abstract class BasePageLoadableComponent {
     protected WebDriver driver;
     private static final int WAIT_FOR_PAGE_LOADED_IN_SECONDS = 30;
 
 
-    public BasePage(WebDriver driver) {
+    public BasePageLoadableComponent(WebDriver driver) {
         this.driver = driver;
     }
 

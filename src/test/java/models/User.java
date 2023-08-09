@@ -14,27 +14,21 @@ public class User {
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
-
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
     public String getCode() {
         return code;
     }
@@ -63,6 +57,35 @@ public class User {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+
+    public static class Builder{
+        private User newUser;
+
+        public Builder(){
+            this.newUser = newUser;
+        }
+
+
+        public Builder withUserName(String userName){
+            newUser.username = userName;
+            return this;
+        }
+        public Builder withUserPassword(String userPassword){
+            newUser.password = userPassword;
+            return this;
+        }
+
+        public Builder withUserEmail(String userEmail){
+            newUser.email = userEmail;
+            return this;
+        }
+
+
+        public User build() {
+            return newUser;
+        }
     }
 
 }

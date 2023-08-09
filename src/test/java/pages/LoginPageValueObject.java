@@ -1,10 +1,12 @@
 package pages;
 
 import baseEntities.BasePage;
+import models.Project;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.configuration.ReadProperties;
 
 public class LoginPageValueObject extends BasePage {
 
@@ -56,16 +58,11 @@ public class LoginPageValueObject extends BasePage {
 
     //Блок комплексных методов
 
-
-
     public void loginValueObject(User user) {
         setEmail(user.getEmail());
         getPswInput().sendKeys(user.getPassword());
         getLogIbButton().click();
     }
-
-
-
 
 
 
