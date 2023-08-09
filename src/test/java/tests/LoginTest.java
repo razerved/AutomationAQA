@@ -33,9 +33,5 @@ public class LoginTest extends BaseTest {
                 "Неверное сообщение об ошибке");
     }
 
-    @Test
-    public void screenShotTest() {
-        Assert.assertTrue(false);
-    }
 
 }
