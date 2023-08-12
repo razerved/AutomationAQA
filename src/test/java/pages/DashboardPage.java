@@ -9,12 +9,13 @@ import org.openqa.selenium.WebElement;
 public class DashboardPage extends BasePage {
     private final static String pagePath = "/index.php?/dashboard/";
 
-    //Блок описания локаторов для элементов
+    // Блок описания локаторов для элементов
     private final By headerTitleLabelLocator = By.xpath("//div[contains(@class, 'content-header-title') and contains(text(), 'All Projects')]");
 
     public TopMenuPage topMenuPage;
     public SideMenuPage sideMenuPage;
-    //Блок инициализации
+
+    // Блок инициализации
     public DashboardPage(WebDriver driver) {
         super(driver);
 
@@ -27,18 +28,14 @@ public class DashboardPage extends BasePage {
         return headerTitleLabelLocator;
     }
 
-    public void openPageByUrl(){
+    public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
 
-    //Блок атомарных методов
-    public WebElement getHeaderTitle(){
-        //getTopPanel();
+    // Блок атомарных методов
+    public WebElement getHeaderTitle() {
         return driver.findElement(headerTitleLabelLocator);
     }
-
-    //Блок комплексных методов
-
 
 
 
