@@ -31,10 +31,10 @@ public class LombokTest {
     @Test
     public void constructorTest() {
         User user = new User(1, "sds", "sdsd", "", "dd");
-        User user2 = new User("wfa", "awd");
+        User user1 = new User("sds", "sdsd");
 
         System.out.println(user);
-        System.out.println(user2);
+        System.out.println(user1);
     }
 
     @Test
@@ -60,4 +60,6 @@ public class LombokTest {
 
         Assert.assertTrue(user.equals(user1));
     }
+
+
 }

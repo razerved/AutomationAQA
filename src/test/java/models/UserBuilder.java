@@ -1,15 +1,11 @@
 package models;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
-import java.util.Objects;
 @Builder
 @ToString
 @EqualsAndHashCode
 public class UserBuilder {
-
     @EqualsAndHashCode.Exclude
     private int id;
     private String username;

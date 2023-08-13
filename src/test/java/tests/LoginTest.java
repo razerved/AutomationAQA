@@ -1,22 +1,24 @@
 package tests;
 
 import baseEntities.BaseTest;
+import helper.DataHelper;
 import models.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.configuration.ReadProperties;
 
 public class LoginTest extends BaseTest {
 
-
     @Test
     public void successLoginTest() {
         Assert.assertTrue(
-                loginStep.successLogin(ReadProperties.username(), ReadProperties.password())
-                        .isPageOpened()
+                loginStep.successLogin(DataHelper.getAdminUser()).isPageOpened()
         );
     }
-   /* @Test
+
+    @Test
     public void incorrectEmailLoginTest() {
         User user = new User();
         user.setEmail("asdasd");
@@ -38,7 +40,7 @@ public class LoginTest extends BaseTest {
                 loginStep.negativeLogin(user).getErrorTextElement().getText(),
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
-    }*/
+    }
 
 
 }
