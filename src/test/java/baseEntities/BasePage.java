@@ -9,53 +9,21 @@ import java.time.Duration;
 
 public abstract class BasePage {
     protected WebDriver driver;
-    private static final int WAIT_FOR_PAGE_LOADED_IN_SECONDS = 30;
-
+    protected WaitService waitService;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        this.waitService = new WaitService(driver);
     }
-
 
     public void openPageByUrl(String pagePath) {
         driver.get(ReadProperties.getUrl() + pagePath);
-
-        //waitForOpen();
-        waitForOpenNew();
     }
-
 
     protected abstract By getPageIdentifier();
 
     public boolean isPageOpened() {
-        WaitService waitService = new WaitService(driver, Duration.ofSeconds(WAIT_FOR_PAGE_LOADED_IN_SECONDS));
-        //return driver.findElement(getPageIdentifier()).isDisplayed();
-        return waitService.waitForExists(getPageIdentifier()).isDisplayed();
-    }
-
-    protected void waitForOpen()  {
-        int tryCount = 0;
-        boolean isPageOpenedIndicator = isPageOpened();
-
-        while (!isPageOpenedIndicator && tryCount < WAIT_FOR_PAGE_LOADED_IN_SECONDS) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            tryCount++;
-            isPageOpenedIndicator = isPageOpened();
-        }
-
-        if (!isPageOpenedIndicator) {
-            throw new AssertionError("Page was not loaded...");
-        }
-    }
-
-    protected void waitForOpenNew()  {
-        if (!isPageOpened()) {
-            throw new AssertionError("Page was not loaded...");
-        }
+        return driver.findElement(getPageIdentifier()).isDisplayed();
     }
 
 }
