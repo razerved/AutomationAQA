@@ -1,11 +1,12 @@
 package pages;
 
 import baseEntities.BasePage;
-import elements.Button;
-import elements.UIElement;
+import com.codeborne.selenide.SelenideElement;
+import models.User;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage extends BasePage {
 
@@ -19,8 +20,8 @@ public class LoginPage extends BasePage {
 
     //Блок инициализации
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage() {
+        super();
     }
 
 
@@ -29,40 +30,45 @@ public class LoginPage extends BasePage {
         return logIbButtonLocator;
     }
 
-    //Блок атомарных методов
-
-    public UIElement getEmailInput() {
-        return new UIElement(driver, emailNameLocator);
+    // Блок атомарных методов
+    public SelenideElement getEmailInput() {
+        return $(emailNameLocator);
     }
 
-    public WebElement getPswInput() {
-        return driver.findElement(pswInputLocator);
+    public SelenideElement getPswInput() {
+        return $(pswInputLocator);
     }
 
-    public Button getLogIbButton() {
-        return new Button(driver, logIbButtonLocator);
+    public boolean isPswInputDisplayed() {
+        return $(getPswInput()).isDisplayed();
     }
 
-    public WebElement getErrorTextLocator() {
-        return driver.findElement(errorTextLocator);
+    public SelenideElement getLogInButton() {
+        return $(logIbButtonLocator);
     }
-
-    public WebElement getErrorFieldTextLocator() {
-        return driver.findElement(errorFieldTextLocator);
-    }
-
 
     public void setEmail(String value) {
-        getEmailInput().sendKeys(value);
+        getEmailInput().setValue(value);
     }
 
-    //Блок комплексных методов
+    public SelenideElement getErrorTextElement() {
+        return $(errorTextLocator);
+    }
 
+    public SelenideElement getErrorFieldTextElement() {
+        return $(errorFieldTextLocator);
+    }
 
-    public void login(String username, String password) {
-        setEmail(username);
+    // Блок комплексных методов
+    public void login(User user) {
+        setEmail(user.getEmail());
+        getPswInput().sendKeys(user.getPassword());
+        getLogInButton().click();
+    }
+    public void login(String user, String password) {
+        setEmail(user);
         getPswInput().sendKeys(password);
-        getLogIbButton().click();
+        getLogInButton().click();
     }
 
 

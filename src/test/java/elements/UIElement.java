@@ -35,6 +35,7 @@ public class UIElement implements WebElement {
 
     }
 
+
     @Override
     public void submit() {
         webElement.submit();
@@ -44,10 +45,6 @@ public class UIElement implements WebElement {
     public void sendKeys(CharSequence... keysToSend) {
         moveToElement();
         webElement.sendKeys(keysToSend);
-    }
-
-    public void moveToElement() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true)", webElement);
     }
 
     @Override
@@ -84,9 +81,14 @@ public class UIElement implements WebElement {
     public List<WebElement> findElements(By by) {
         return webElement.findElements(by);
     }
+
+    public UIElement findUIElement(By by) {
+        return new UIElement(driver, webElement.findElement(by));
+    }
+
     public List<UIElement> findUIElements(By by) {
         ArrayList<UIElement> list = new ArrayList<>();
-        for (WebElement element: webElement.findElements(by)) {
+        for (WebElement element : webElement.findElements(by)) {
             list.add(new UIElement(driver, element));
         }
         return list;
@@ -125,6 +127,14 @@ public class UIElement implements WebElement {
     @Override
     public <X> X getScreenshotAs(OutputType<X> target) throws WebDriverException {
         return webElement.getScreenshotAs(target);
+    }
+
+    public void moveToElement() {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", webElement);
+    }
+
+    public WebElement getWebElement() {
+        return webElement;
     }
 
 

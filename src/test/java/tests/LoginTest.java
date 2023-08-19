@@ -8,19 +8,13 @@ import utils.configuration.ReadProperties;
 public class LoginTest extends BaseTest {
     @Test
     public void successLoginTest() {
-        Assert.assertFalse(
-                loginStep.successLogin(
-                                ReadProperties.username(),
-                                ReadProperties.password()
-                        )
-                        .isPageOpened()
-        );
+        loginStep.successLogin(ReadProperties.username(), ReadProperties.password()).isPageOpened();
     }
 
     @Test
     public void incorrectEmailLoginTest() {
         Assert.assertEquals(
-                loginStep.negativeLogin("sdsd", ReadProperties.password()).getErrorTextLocator().getText(),
+                loginStep.negativeLogin("sdsd", ReadProperties.password()).getErrorTextElement().getText(),
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
     }
@@ -28,7 +22,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void incorrectPswLoginTest() {
         Assert.assertEquals(
-                loginStep.negativeLogin(ReadProperties.username(), "123").getErrorFieldTextLocator().getText(),
+                loginStep.negativeLogin(ReadProperties.username(), "123").getErrorFieldTextElement().getText(),
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
     }

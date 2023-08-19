@@ -1,31 +1,23 @@
 package baseEntities;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import pages.ProjectsPage;
-import services.WaitService;
-import utils.configuration.ReadProperties;
+
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public abstract class BasePage {
-    protected WebDriver driver;
-    protected WaitService waitService;
-    protected ProjectsPage projectsPage;
-
-
-
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-        this.waitService = new WaitService(driver);
+    public BasePage() {
     }
 
-
     public void openPageByUrl(String pagePath) {
-        driver.get(ReadProperties.getUrl() + pagePath);
+        open(pagePath);
     }
 
     protected abstract By getPageIdentifier();
-    public boolean isPageOpened(){
-        return driver.findElement(getPageIdentifier()).isDisplayed();
+
+    public void isPageOpened() {
+        $(getPageIdentifier()).shouldBe(visible);
     }
 
 
