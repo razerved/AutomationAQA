@@ -1,16 +1,13 @@
 package homeWork.steps;
 
-import homeWork.Page.BasketPageHW;
-import homeWork.Page.LoginPageHW;
-import homeWork.Page.ProductsPageHW;
-import homeWork.base.BaseStepsHW;
-import org.openqa.selenium.WebDriver;
+import homeWork.Page.BasketPage;
+import homeWork.base.BaseSteps;
 
-public class ProductsStepsHW extends BaseStepsHW {
+public class ProductsSteps extends BaseSteps {
 
 
-    public ProductsStepsHW(WebDriver wd) {
-        super(wd);
+    public ProductsSteps() {
+        super();
     }
 
 
@@ -21,7 +18,7 @@ public class ProductsStepsHW extends BaseStepsHW {
     }
 
 
-    public BasketPageHW clickGoodsButtonAdd(int button){
+    public BasketPage clickGoodsButtonAdd(int button){
         productPage.getButtonLocator().get(button).click();
         productPage.getBasketLocator().click();
         return basketPage;
