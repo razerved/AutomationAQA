@@ -1,12 +1,11 @@
 package homeWork.Page;
 
-import homeWork.Page.FinishPageHW;
-import homeWork.base.BasePageHW;
+import homeWork.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CheckoutPageHW extends BasePageHW {
+public class CheckoutPage extends BasePage {
     private final String  path = "/checkout-step-one.html";
 
 
@@ -17,7 +16,7 @@ public class CheckoutPageHW extends BasePageHW {
     private final By continueButtonLocator = By.id("continue");
 
 
-    public CheckoutPageHW(WebDriver wd) {
+    public CheckoutPage(WebDriver wd) {
         super(wd);
     }
 

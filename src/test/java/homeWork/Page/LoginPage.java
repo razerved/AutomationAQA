@@ -1,18 +1,18 @@
 package homeWork.Page;
 
-import homeWork.base.BasePageHW;
+import homeWork.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPageHW extends BasePageHW {
+public class LoginPage extends BasePage {
     private final By usernameLocator = By.id("user-name");
     private final By passwordLocator = By.id("password");
     private final By loginButtonLocator = By.id("login-button");
 
 
 
-    public LoginPageHW(WebDriver wd) {
+    public LoginPage(WebDriver wd) {
         super(wd);
     }
 
