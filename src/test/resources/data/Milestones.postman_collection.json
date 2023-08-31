@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "f673af13-1a6a-4bd0-9b34-12c40a5eac04",
+		"name": "Milestones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12796946"
+	},
+	"item": [
+		{
+			"name": "get_milestones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/index.php?/api/v2/get_milestone/{{milestone_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/get_milestone/{{milestone_id}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_milestone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Release 2.0\",\r\n    \"due_on\": 1394596385\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/index.php?/api/v2/add_milestone/{{project_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/add_milestone/{{project_id}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_milestone",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"is_completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/index.php?/api/v2/update_milestone/{{milestone_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/update_milestone/{{milestone_id}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_milestone",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/index.php?/api/v2/delete_milestone/{{milestone_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/delete_milestone/{{milestone_id}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
