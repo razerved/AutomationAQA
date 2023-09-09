@@ -2,6 +2,7 @@ package tests.api;
 
 import adapters.ProjectAdapter;
 import baseEntities.BaseApiTest;
+import helpers.GsonHelpers;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 import models.Project;
@@ -14,7 +15,7 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class TestRailApiTest1 extends BaseApiTest {
@@ -115,6 +116,24 @@ public class TestRailApiTest1 extends BaseApiTest {
 
 
         new ProjectAdapter().add(expectedProject);
+
+    }
+
+    @Test
+    public void addProjectTest5(){
+
+        String endpoint = "/index.php?/api/v2/add_project";
+
+        Project expectedProject = new Project();
+        expectedProject.setProjectName("WP_Project_06");
+        expectedProject.setAnnouncement("This is a description!!!");
+        expectedProject.setFlag(true);
+        expectedProject.setProjectType(3);
+
+
+        Response response = new ProjectAdapter().add2(expectedProject);
+        Project actualProject = GsonHelpers.getProjectFromJson(response.getBody().asString());
+        System.out.println(actualProject.toString());
 
     }
 

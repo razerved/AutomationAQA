@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 public class ProjectAdapter {
     private Gson gson = new Gson();
 
-    public void add(Project expectedProject){
+    public void add(Project expectedProject) {
         given()
                 .body(expectedProject, ObjectMapperType.GSON)
                 .log().all()
@@ -24,7 +24,20 @@ public class ProjectAdapter {
                 .statusCode(HttpStatus.SC_OK);
     }
 
-    public Projects geAllProjects(){
+    public Response add2(Project expectedProject) {
+        return given()
+                .body(expectedProject, ObjectMapperType.GSON)
+                .log().all()
+                .when()
+                .post(Endpoints.ADD_PROJECT)
+                .then()
+                .log().body()
+                .statusCode(HttpStatus.SC_OK)
+                .extract()
+                .response();
+    }
+
+    public Projects geAllProjects() {
         Response response = given()
                 .get(Endpoints.GET_ALL_PROJECTS)
                 .then()
@@ -35,14 +48,9 @@ public class ProjectAdapter {
         return gson.fromJson(response.getBody().asString(), Projects.class);
     }
 
-    public void add2(){
+    public void add2() {
 
     }
-
-
-
-
-
 
 
 }
