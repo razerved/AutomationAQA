@@ -14,6 +14,8 @@ import utils.Endpoints;
 
 import javax.xml.transform.Source;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,6 +88,9 @@ public class TestRailApiTest2 extends BaseApiTest {
                 .role("Lead")
                 .build();
 
+        String json = gson.toJson(expectedUser);
+        System.out.println(json);
+
         Response response = given()
                 .pathParam("user_id", userId)
                 .get(Endpoints.GET_USER);
@@ -150,6 +155,27 @@ public class TestRailApiTest2 extends BaseApiTest {
 
         Assert.assertEquals(actualList.get(0), expectedUsers);
 
+    }
+
+
+    @Test
+    public void testFromResourceFile() throws FileNotFoundException {
+        int userId = 1;
+        Gson gson = new Gson();
+
+        FileReader reader = new FileReader("src/test/resources/expectedUser.json");
+        User expectedUser = gson.fromJson(reader, User.class);
+
+        String json = gson.toJson(expectedUser);
+        System.out.println(json);
+
+        Response response = given()
+                .pathParam("user_id", userId)
+                .get(Endpoints.GET_USER);
+
+        User actualUser = gson.fromJson(response.getBody().asString(), User.class);
+        System.out.println(actualUser.toString());
+        Assert.assertTrue(expectedUser.equals(actualUser));
     }
 
 

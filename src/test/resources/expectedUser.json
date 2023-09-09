@@ -1,0 +1,9 @@
+{
+  "name": "Alex Trostyanko",
+  "id": 0,
+  "email": "atrostyanko@gmail.com",
+  "is_active": true,
+  "is_admin": false,
+  "role_id": 1,
+  "role": "Lead"
+}
